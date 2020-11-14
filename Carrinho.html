@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=”UTF-8″/>
+<link rel="stylesheet" type="text/css"  href="estilo.css" />
+
+<!--TITULO DO SITE-->
+
+<title>Dellicata</title>
+
+<!--ICONE DO SITE-->
+
+<link rel=" icon" type="imagem/png" href="./img/icon.png">
+<style>
+
+/*MODIFICA A COR DO BODY E A FONTE*/
+
+   body {
+  background-color: #FFFFF0;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+/*REPOSICIONA O MENU, MODIFICA A COR E O TAMANHO DO MENU*/
+
+*{margin: 0; padding: 0;}
+.menu {
+  overflow: hidden;
+  background-color:  #F0E68C;
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  list-style-type: none;
+  border:1px solid #F5F5DC;
+}
+
+.menu li {
+  float: left;
+  position:relative;
+}
+
+.menu li a {
+  display: block;
+  color: black;
+  text-align: right;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu li  ul{
+position: absolute;
+top:0px;
+left:14px;
+background-color:#F0E68C;
+display:none;
+}
+
+/*PERMITE MOSTRAR O SUBMENU*/
+
+.menu li:hover ul, .menu li.over ul{display:contents;}
+
+.menu li ul li{
+  display: block;
+  width: 100px;
+  overflow: hidden;
+}
+
+.menu li a:hover {
+  background-color: #F0E68C;
+  -moz-box-shadow:0 3px 10px 0 #F5F5DC;
+ -webkit-box-shadow:0 3px 10px 0 #F5F5DC;
+ text-shadow:0px 0px 5px #F5F5DC;
+}
+
+/*MODIFICA A COR E O TAMANHO DO SUBMENU*/
+
+.submenu ul{
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  z-index: 1;
+  display: block;
+}
+
+.submenu li a{
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.submenu li a:hover {
+  background-color: #F0E68C;
+  -moz-box-shadow:0 3px 10px 0 #F5F5DC;
+ -webkit-box-shadow:0 3px 10px 0 #F5F5DC;
+ text-shadow:0px 0px 5px #F5F5DC;
+}
+
+.menu input [type=text]{
+  float: right;
+  padding: 2px;
+  border: none;
+  margin-top: 2px;
+  margin-right: 10px;
+  font-size: 12px;
+  
+}
+
+input{
+  width: 200px;
+  padding: 10px;
+  color: black;
+  background-color:	#DDA0DD;
+  margin-left: 20px;
+  margin-top: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+.footer{
+        overflow: hidden;
+        background-color:  #F0E68C;
+        position:fixed; 
+        list-style-type: none;
+        border:1px solid #F5F5DC;
+        display:block;
+        bottom: 0;
+        width: 100%;
+        }
+
+</style>
+</head>
+<body>
+
+    <!-- MENU COM SUBMENU NA HORIZONTAL -->
+  
+    <nav>
+      <ul class = "menu">
+          <li><a href="./Index.html">Home</a></li>
+          <li><a href=./Contato.html>Contato</a></li>
+          <li><a href=./Perfume.html>Perfumes</a></li>
+          <li><a href=./Maquiagem.html>Maquiagens</a>
+            <ul class = "submenu">
+              <li><a href=./Batom.html>Batom</a></li>
+              <li><a href=./Paleta.html>Paleta</a></li>
+            </ul>
+          </li>
+          <li style="float:right" ><input  type="text" id="search" placeholder="Procurar..." ><img src="./img/search.png" alt="Pesquisar"  width="30px"></li>
+          <li style="float:right"><a href="./Login.html">Entrar</a></li>
+      </ul>
+    </nav>
+<!--RODAPE COM PARAGRAFO E LINKS PARA N PAGINAS-->
+
+  <div class="footer">
+    <p>Sobre <a href="sobre.html">Dellicata</a> |
+      <a href="emprego.html">  Trabalhe Conosco</a> |
+      <a href="emprego.html">  instagram</a> |
+      <a href="emprego.html"> Twitter</a></p>
+  </div>
+</body>  
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!--TITULO DO SITE-->
+
+    <title>Dellicata</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <!--ICONE DO SITE-->
+
+    <link rel=" icon" type="imagem/png" href="./img/icon.png">
+
+    <style>
+
+      /*MODIFICA A COR DO BODY E A FONTE*/
+
+  body {
+  background-color: #FFFFF0;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+/*REPOSICIONA O MENU, MODIFICA A COR E O TAMANHO DO MENU*/
+
+*{margin: 0; padding: 0;}
+.menu {
+  overflow: hidden;
+  background-color:  #F0E68C;
+  position: relative; 
+  top: 0; 
+  width: 100%; 
+  list-style-type: none;
+  border:1px solid #F5F5DC;
+}
+
+.menu li {
+  float: left;
+  position:relative;
+}
+
+.menu li a {
+  display: block;
+  color: black;
+  text-align: right;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu li  ul{
+position: absolute;
+top:0px;
+left:14px;
+background-color:#F0E68C;
+display:none;
+}
+
+/*PERMITE MOSTRAR O SUBMENU*/
+
+.menu li:hover ul, .menu li.over ul{display:contents;}
+
+.menu li ul li{
+  display: block;
+  width: 100px;
+  overflow: hidden;
+}
+
+.menu li a:hover {
+  background-color: #F0E68C;
+  -moz-box-shadow:0 3px 10px 0 #F5F5DC;
+ -webkit-box-shadow:0 3px 10px 0 #F5F5DC;
+ text-shadow:0px 0px 5px #F5F5DC;
+}
+
+/*MODIFICA A COR E O TAMANHO DO SUBMENU*/
+
+.submenu ul{
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  z-index: 1;
+  display: block;
+}
+
+.submenu li a{
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.submenu li a:hover {
+  background-color: #F0E68C;
+  -moz-box-shadow:0 3px 10px 0 #F5F5DC;
+ -webkit-box-shadow:0 3px 10px 0 #F5F5DC;
+ text-shadow:0px 0px 5px #F5F5DC;
+}
+
+.menu input [type=text]{
+  float: right;
+  padding: 2px;
+  border: none;
+  margin-top: 2px;
+  margin-right: 10px;
+  font-size: 12px;
+  
+}
+
+/*MODIFICA A FONTE, O TAMANHO DA FONTE, A COR E A BORDA DO FORMULARIO*/
+
+        form{
+        background-color: #FFFFF0 ;
+        font-size: 15px;
+        max-width:500px;
+        -webkit-border-radius: 0 0  5px 5px;
+        border-radius: 0 0  5px 5px;
+        }
+        a{
+            text-decoration:none;
+        }
+
+        a.links{
+            display:none;
+        }
+
+        .content{
+            width: 500px;
+            min-height: 560px;
+            margin:0px auto;
+            position:relative;
+        }
+
+        p{
+            margin-bottom: 15px;
+        }
+
+        .content p:first-child{
+            margin: 0px;
+        }
+
+        label{
+            position:relative;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            color: black;
+            text-shadow: 5px 5px 5px black;
+        }
+
+
+ 
+        input:-moz-placeholder,
+        textarea:-moz-placeholder{
+        color: #DA70D6;
+        }
+
+        input{
+            outline:none;
+        }
+
+        input:not([type="checkbox"]){
+            width:95%;
+            margin-top: 4px;
+            padding: 10px;
+        }
+
+        input[type="submit"]{
+            width: 100% !important;
+            cursor:pointer;
+            background:#DA70D6 ;
+            padding: 8px 5px;
+            box-shadow: 5px 0px 9px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+        input{
+        width: 200px;
+        padding: 10px;
+        color: black;
+        background-color:	#DDA0DD;
+        margin-left: 1px;
+        margin-top: 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        input:hover, input:focus{
+        box-shadow: 5px 0px 9px;
+        background-color:	#DA70D6;
+        color: black;
+        font-weight: bold;
+        }
+
+        .Cadastrar{
+        height: 40px;
+        width: 40px;
+        font-weight: bold;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        color: black;
+        background-color:	#DDA0DD
+        }
+
+        .link{
+            position:absolute;
+            left:0px;
+            height:20px;
+            width:440px;
+            text-align: right;
+            }
+
+        link a{
+            font-weight: bold;
+            background:	#DDA0DD ;
+            padding: 6px;
+            margin-left: 10px ;
+        }
+
+        article {
+        float: left;
+        }
+
+      /*MUDA POSIÇÃO TAMANHO, COR, MARGEM E ETC DO CONTAINER DE BOTÕES TIPO RADIO PARA ESCOLHA DO GENERO*/
+    
+    .container2 {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select:none;
+    }
+
+
+    .container2 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    }
+
+
+    .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color:#DDA0DD;
+    border-radius: 50%;
+    }
+    .container2:hover input ~ .checkmark {
+    background-color: #DDA0DD;
+    }
+
+
+    .container2 input:checked ~ .checkmark {
+    background-color: #DA70D6;
+    }
+
+
+    .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    }
+
+
+    .container2 input:checked ~ .checkmark:after {
+    display: block;
+    }
+
+
+    .container2 .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #DDA0DD;
+    }
+
+    figure {
+    display: table;
+  }
+
+
+figure {
+  background-color:#D8BFD8;
+  float: center;
+  width: 35%;
+  text-indent: 0;
+  text-align: left;
+  margin:10px;
+  padding:10px;
+  margin-bottom:40px;
+  border-right-width: 1px;
+  border-left-width: 2px;
+}
+
+/* MODIFICA A COR, FIXA O RODAPE E TAMANHO E COR DA BORDA*/
+    .footer{
+        overflow: hidden;
+        background-color:  #F0E68C;
+        position:fixed; 
+        list-style-type: none;
+        border:1px solid #F5F5DC;
+        display:block;
+        bottom: 0;
+        width: 100%;
+        }
+        </style>
+</head>
+<body>
+
+    <!--MENU-->
+    <nav>
+        <ul class = "menu">
+            <li><a href="./Index.html">Home</a></li>
+            <li><a href=./Contato.html>Contato</a></li>
+            <li><a href=./Perfume.html>Perfumes</a></li>
+            <li><a href=./Maquiagem.html>Maquiagens</a>
+              <ul class = "submenu">
+                <li><a href=./Batom.html>Batom</a></li>
+                <li><a href=./Paleta.html>Paleta</a></li>
+              </ul>
+            </li>
+        </ul>
+      </nav>
+
+    <div class="container">
+        <a class="link" id="Cadastro"></a>
+    </div class = "content">
+<center>
+  <figure>
+        <center> <img src="./img/login.png" alt="User" width="100px"></center>
+    <!-- FORMULARIO PARA CADASTRO -->
+    <div >
+        <form method="post" action="">
+            <div class="container">
+                <br>
+                <label for="Nome"><b>Nome:</b></label>
+                <input id="Nome" name="Nome" required="required" type="text" placeholder="Nome" /> 
+                </br>
+                <br>
+                <label for="Sobrenome"><b>Sobrenome:</b></label>
+                <input id="Sobrenome" name="Sobrenome" required="required" type="text" placeholder="Sobrenome" /> 
+                </br>
+                <br>
+                <label for="Fone"><b>Telefone:</b></label>
+                <input type="tel" id="foneid" placeholder="(+xx)xx-xxx-xxxxxx" name="fone"/>
+                </br>
+                <br>
+                <label for="email"><b>E-mail:</b></label>
+                <input id="email" name="email" required="required" type="text" placeholder="nome@email.com" /> 
+                </br>
+                <br>
+                <label for="senha"><b>Senha:</b></label>
+                <input type="password" placeholder="Senha" name="Senha" required>
+                </br>
+                <br>
+                <label for="senha"><b>Repetir Senha:</b></label>
+                <input type="password" placeholder="Senha" name="Senha" required>
+                </br>
+                <br>
+                <label for="CPF"><b>CPF:</b></label>
+                <input type="numbertext" placeholder="xxx.xxx.xxx-xx" name="CPF" required>
+                </br>
+
+                <br>
+                <label for="RG"><b>RG:</b></label>
+                <input type="numbertext" placeholder="xx.xxx.xxx-x" name="RG" required>
+                </br>
+
+                <br>
+                <label for="DN"><b>Data de Nascimento:</b></label>
+                <input type="numbertext" placeholder="xx/xx/xxxx" name="DN" required>
+                </br>
+                <label for="Genero"><br><b>Genero:</b></br>
+                <label class="container2"><b>Mulher Cisgênero</b>
+                    <input type="radio" name="op" value="op1">
+                    <span class="checkmark"></span>
+                  </label>
+                  
+                  <label class="container2"><b>Homem Cisgênero</b>
+                    <input type="radio"  name="op" value="op2">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="container2"><b>Homem Transgênero</b>
+                    <input type="radio"  name="op" value="op3">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="container2"><b>Mulher Transgênero</b>
+                    <input type="radio"  name="op" value="op4">
+                    <span class="checkmark"></span>
+                  </label>
+                  
+                  <label class="container2"><b>não binario</b>
+                    <input type="radio"  name="op" value="op5">
+                    <span class="checkmark"></span>
+                  </label>
+                  
+                  <label class="container2"><b>Não quero responder</b>
+                    <input type="radio"  name="op" value="op6">
+                    <span class="checkmark"></span>
+                  </label>
+                </label>
+                <label>
+                    <br><input type="checkbox" checked="checked" name="remember">
+                Lembrar-me</br>
+
+                <br><input type="checkbox" checked="checked" name="Termos">
+                Li e Concordo com os <a href="./Termos.html">Termos de uso e politica de privacidade</a><br>
+                </label>
+                <input type="submit" class="Cadastrar" onclick="Enviar();" value="Cadastrar" />
+                <span class="Senha">Esqueceu a <a href="#">Senha?</a></span>
+              <center><br><p>
+                  Já tem conta?
+                  <a href="./login.html">Entre</a>
+              </p></br></center>
+            </div>
+        </form>
+    </div>
+    </figure>
+    </center>
+    <!--RODAPE COM PARAGRAFO E LINKS PARA N PAGINAS-->
+    <div class="footer">
+      <p>Sobre <a href="sobre.html">Dellicata</a> |
+        <a href="emprego.html">  Trabalhe Conosco</a> |
+        <a href="emprego.html">  instagram</a> |
+        <a href="emprego.html"> Twitter</a></p>
+    </div>
+</body>
+</html>

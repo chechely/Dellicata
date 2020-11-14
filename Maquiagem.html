@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=”UTF-8″/>
+<link rel="stylesheet" type="text/css"  href="estilo.css" />
+
+<!--TITULO DO SITE-->
+
+<title>Dellicata</title>
+
+<!--ICONE DO SITE-->
+
+<link rel=" icon" type="imagem/png" href="./img/icon.png">
+<style>
+
+/*MODIFICA A COR DO BODY E A FONTE*/
+
+   body {
+  background-color: #FFFFF0;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+/*REPOSICIONA O MENU, MODIFICA A COR E O TAMANHO DO MENU*/
+
+*{margin: 0; padding: 0;}
+.menu {
+  overflow: hidden;
+  background-color:  #F0E68C;
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  list-style-type: none;
+  border:1px solid #F5F5DC;
+}
+
+.menu li {
+  float: left;
+  position:relative;
+}
+
+.menu li a {
+  display: block;
+  color: black;
+  text-align: right;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu li  ul{
+position: absolute;
+top:0px;
+left:14px;
+background-color:#F0E68C;
+display:none;
+}
+
+/*PERMITE MOSTRAR O SUBMENU*/
+
+.menu li:hover ul, .menu li.over ul{display:contents;}
+
+.menu li ul li{
+  display: block;
+  width: 100px;
+  overflow: hidden;
+}
+
+.menu li a:hover {
+  background-color: #F0E68C;
+  -moz-box-shadow:0 3px 10px 0 #F5F5DC;
+ -webkit-box-shadow:0 3px 10px 0 #F5F5DC;
+ text-shadow:0px 0px 5px #F5F5DC;
+}
+
+/*MODIFICA A COR E O TAMANHO DO SUBMENU*/
+
+.submenu ul{
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  z-index: 1;
+  display: block;
+}
+
+.submenu li a{
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.submenu li a:hover {
+  background-color: #F0E68C;
+  -moz-box-shadow:0 3px 10px 0 #F5F5DC;
+ -webkit-box-shadow:0 3px 10px 0 #F5F5DC;
+ text-shadow:0px 0px 5px #F5F5DC;
+}
+
+.menu input [type=text]{
+  float: right;
+  padding: 2px;
+  border: none;
+  margin-top: 2px;
+  margin-right: 10px;
+  font-size: 12px;
+  
+}
+
+/*AJUSTA O TAMANHO DA MARGEM DE CIMA*/
+
+h2{
+  margin-top:60px;
+}
+
+/*MODIFICA AS BORDAS, O TAMANHO E A POSIÇÃO DO SLIDE*/
+
+.slider {
+     display: block;
+     height: 293px;
+    width: 600px;
+    margin: auto;
+   margin-top: 85px;
+    position: relative;
+    border-top-width: 200px;
+ }
+
+ .slider li {
+     list-style: none;
+     position:absolute;
+     width: 700px;
+     height: 319px;
+ }
+
+ .slider img {
+     margin: auto;
+     height: 100%;
+     width: 100%;
+     vertical-align: top;
+ }
+
+ .slider input {
+    display: none;
+}
+
+.slider label {
+     background-color: 	#DA70D6;
+     bottom: 10px;
+     cursor: pointer;
+     display: block;
+     height: 10px;
+     position: absolute;
+     width: 10px;
+     z-index: 10;
+ }
+
+/*ESPAÇO ENTRE OS BOTÕES QUE PASSAM O SLIDE*/
+
+ .slider li:nth-child(1) label {
+     left: 10px;
+ }
+
+ .slider li:nth-child(2) label {
+     left: 30px;
+ }
+
+ .slider li:nth-child(3) label {
+     left: 50px;
+ }
+
+ .slider li:nth-child(4) label {
+     left: 70px;
+ }
+
+ .slider li:nth-child(5) label {
+     left: 90px;
+ }
+
+/*MODIFICA A VISIBILIDADE E A OPACIDADE DA IMAGEM DENTRO DO SLIDE*/
+
+ .slider img {
+     opacity: 0;
+     visibility: hidden;
+ }
+
+ .slider li input:checked ~ img {
+      opacity: 1;
+      visibility: visible;
+     z-index: 10;
+ }
+
+
+/*MODIFICA O ESTILO DE TRANSIÇÃO ENTRE OS SLIDES*/
+
+ .slider{
+
+  transition: left 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+
+}
+
+/*AJUSTA AS ISLUSTRAÇÕES DOS PRODUTOS */
+
+figure {
+  display: table;
+}
+
+/*MODIFICA A COR, O ALINHAMENTO DO TEXTO, E O ALINHAMENTO DA FIGURA*/
+
+figcaption {
+  display: table-caption;
+  caption-side: top;
+}
+figure {
+  background-color:#D8BFD8;
+  float: left;
+  width: 30%;
+  text-indent: 0;
+  text-align: center;
+  margin:10px;
+  padding:10px;
+}
+
+/*MODIFICA OS BOTÕES DE "COMPRA" QUE ESTÃO LOCALIZADOS DENTRO DAS FIGURAS*/
+
+input{
+  width: 200px;
+  padding: 10px;
+  color: black;
+  background-color:	#DDA0DD;
+  margin-left: 20px;
+  margin-top: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+/*ESTILIZA O BOTÃO DE "COMPRA"*/
+
+input:hover,  input:focus{
+  box-shadow: 5px 0px 9px;
+  background-color:	#DA70D6;
+  color: black;
+  font-weight: bold;
+}
+
+/*MODIFICA A COR, O TAMANHO E FIXA A POSIÇÃO DO RODAPE*/
+
+.footer{
+        overflow: hidden;
+        background-color:  #F0E68C;
+        position:fixed; 
+        list-style-type: none;
+        border:1px solid #F5F5DC;
+        display:block;
+        bottom: 0;
+        width: 100%;
+        }
+</style>
+</head>
+<body>
+
+<!-- MENU COM SUBMENU NA HORIZONTAL -->
+
+  <nav>
+    <ul class = "menu">
+        <li><a href="./Index.html">Home</a></li>
+        <li><a href=./Contato.html>Contato</a></li>
+        <li><a href=./Perfume.html>Perfumes</a></li>
+        <li><a href=./Maquiagem.html>Maquiagens</a>
+          <ul class = "submenu">
+            <li><a href=./Batom.html>Batom</a></li>
+            <li><a href=./Paleta.html>Paleta</a></li>
+          </ul>
+        </li>
+        <li style="float:right" ><input  type="text" id="search" placeholder="Procurar..." ><img src="./img/search.png" alt="Pesquisar"  width="30px"></li>
+        <li style="float:right"><a href="./Carrinho.html"><img src="./img/carrinho.png" alt="Carrinho" width="30px"> </a></li> 
+        <li style="float:right"><a href="./Login.html">Entrar</a></li>
+    </ul>
+  </nav>
+
+<!--SLIDE COM IMAGENS E DESCRIÇÕES -->
+
+  <ul class="slider">
+    <li>
+      <!-- BOTÕES DO TIPO RADIO PARA TRANSITAR ENTRE OS SLIDES -->
+      <input type="radio" id="slide1" name="slide" checked>
+      <label for="slide1"></label>
+      <!--IMAGEM-->
+      <img src="./img/tela.jpeg" >
+    </li>
+    <li>
+      <input type="radio" id="slide2" name="slide" >
+      <label for="slide2"></label>
+      <img src="./img/tela2.jpeg" >
+    </li>
+    <li>
+      <input type="radio" id="slide3" name="slide" >
+      <label for="slide3"></label>
+      <img src="./img/tela3.jpeg" >
+
+    </li>
+    <li>
+      <input type="radio" id="slide4" name="slide" >
+      <label for="slide4"></label>
+      <img src="./img/tela5.jpeg" >
+
+    </li>
+    <li>
+      <input type="radio" id="slide5" name="slide" >
+      <label for="slide5"></label>
+      <img src="./img/tela4.jpeg"  >
+      </li>
+  </ul>
+
+<br><center><h2>Aqui, sua beleza é infinita.
+  Seu dinheiro nossa alegria.
+  A vida com muito mais beleza.
+  Sua pele mais que perfeita.</h2></center></br>
+
+<center><h1>Maquiagens</h1></center>
+
+<!--DENTRO DO FIGURE ESTÁ CONTIDO UM PARAGRAFFO DESCRITIVO, UMA IMAGEM E O TITULO DOS PRODUTOS-->
+
+  <figure>
+  <h3>Paleta de cores quentes</h3> 
+  <a href="./Paleta.html" title="Paleta de cores quentes">
+  <p><img src="./img/paleta.jpeg" alt="Paleta" width=250 height=250>
+  </a>
+  <h3 style ="color:red">R$50,99</h3>
+  <p>Paleta de cores quentes super pigmentada que revitaliza seus olhos</p>
+  <input type="submit" class="AddCarrinho" onclick="AddCarrinho();" value="Adicionar ao Carrinho" />
+  </figure>
+
+  <figure>
+    <h3>Brilho Labial</h3> 
+    <a href="./Batom.html" title="Brilho Labial">
+    <p><img src="./img/Brilho.jpeg" alt="Paleta" width=250 height=250>
+    </a>
+    <h3 style ="color:red">R$17,99</h3>
+    <p>O Brilho Labial dá volume e realça seus lábios com incríveis tons diversificados.</p>
+    <input type="submit" class="AddCarrinho" onclick="AddCarrinho();" value="Adicionar ao Carrinho" />
+    </figure>
+
+<!--RODAPE COM PARAGRAFO E LINKS PARA N PAGINAS-->
+
+    <div class="footer">
+      <p>      <p>Sobre <a href="sobre.html">Dellicata</a> |
+        <a href="emprego.html">  Trabalhe Conosco</a> |
+        <a href="emprego.html">  instagram</a> |
+        <a href="emprego.html"> Twitter</a></p></p>
+    </div>
+
+</body>
+</html>
